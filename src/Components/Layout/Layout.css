@@ -1,0 +1,24 @@
+.layout {
+  width: 100%;
+  min-height: 100vh;
+  background: white;
+  padding-top: 64px;  /* Add this line */
+}
+
+.layout-container {
+  width: 100%;
+  padding: 0 80px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .layout-container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout-container {
+    padding: 0 16px;
+  }
+}

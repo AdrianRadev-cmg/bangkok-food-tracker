@@ -1,22 +1,24 @@
-import 'mapbox-gl/dist/mapbox-gl.css';  // This needs to be first
-import Map from 'react-map-gl';
+import { useState } from 'react'
 import './App.css'
+import Layout from './Components/Layout/Layout'
+import Header from './Components/Header/Header'
+import MapComponent from './Components/Map/Map'
+import FilterBar from './Components/FilterBar/FilterBar'
 
 function App() {
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
+
   return (
-    <div className="app">
-      <h1>Bangkok Street Food Map</h1>
-      <Map
-        mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
-        initialViewState={{
-          longitude: 100.5018, // Bangkok coordinates
-          latitude: 13.7563,
-          zoom: 11
-        }}
-        style={{width: "100%", height: "500px"}}
-        mapStyle="mapbox://styles/mapbox/streets-v12"
+    <Layout>
+      <Header />
+      <FilterBar 
+        activeFilter={activeFilter}
+        onFilterChange={setActiveFilter}
       />
-    </div>
+      <main>
+        <MapComponent activeFilter={activeFilter} />
+      </main>
+    </Layout>
   )
 }
 

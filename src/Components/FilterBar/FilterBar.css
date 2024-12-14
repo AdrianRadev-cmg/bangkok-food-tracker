@@ -1,0 +1,37 @@
+.filter-bar {
+    display: flex;
+    gap: 32px;
+    padding: 16px 0;
+    border-bottom: 1px solid #ebebeb;
+    overflow-x: auto;
+  }
+  
+  .filter-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #717171;
+    font-size: 12px;
+    min-width: 56px;
+  }
+  
+  .filter-icon {
+    font-size: 24px;
+  }
+  
+  .filter-item:hover {
+    color: #000;
+  }
+  
+  /* Hide scrollbar but keep functionality */
+  .filter-bar::-webkit-scrollbar {
+    display: none;
+  }.filter-item.active {
+    color: #000;
+    border-bottom: 2px solid #000;
+  }
